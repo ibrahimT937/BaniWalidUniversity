@@ -1,7 +1,7 @@
 import "./components/layout/Navbar/index.css";
 import { Link } from "react-router-dom";
 
-import Logo from "./assets/images/hero.png";
+import Logo from "./assets/images/logo.png";
 import uoLogo from "./assets/images/uo.png";
 import presidentImg from "./assets/images/spaga.png";
 
