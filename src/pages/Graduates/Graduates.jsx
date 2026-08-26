@@ -1,0 +1,2 @@
+import PageHero from '../components/common/PageHero';
+export default function Graduates(){return <><PageHero title="الخريجون" subtitle="مجتمع الخريجين والتواصل المهني وقصص النجاح."/><section className="container section"><div className="info-panel"><h2>بوابة الخريجين</h2><p>يمكن إضافة بيانات الخريجين، فرص العمل، الفعاليات، وقصص النجاح وربطها لاحقًا بقاعدة بيانات.</p></div></section></>;}

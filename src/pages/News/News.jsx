@@ -1,0 +1,3 @@
+import PageHero from '../components/common/PageHero';
+const news=['بدء التسجيل للفصل الدراسي الجديد','فعالية علمية لطلاب الجامعة','تحديث الخدمات الإلكترونية','مناقشة مشاريع التخرج'];
+export default function News(){return <><PageHero title="الأخبار والإعلانات" subtitle="تابع آخر المستجدات والفعاليات الجامعية."/><section className="container section"><div className="feature-grid">{news.map((x,i)=><article className="feature" key={x}><small>أخبار الجامعة • {i+1} أغسطس 2026</small><h3>{x}</h3><p>مكان مخصص لعرض الخبر وتفاصيله وربطه بنظام إدارة المحتوى.</p></article>)}</div></section></>;}

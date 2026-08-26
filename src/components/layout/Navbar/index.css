@@ -1,0 +1,1762 @@
+:root {
+    --primary-color: #0b3c5d;
+    --secondary-color: #137ba3;
+    --accent-color: #caa64b;
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --text-light: #64748b;
+    --white: #ffffff;
+
+    --border-color: #e2e8f0;
+    --shadow-sm:
+        0 4px 6px -1px rgba(0, 0, 0, 0.08),
+        0 2px 4px -1px rgba(0, 0, 0, 0.04);
+
+    --shadow-md:
+        0 10px 20px rgba(0, 0, 0, 0.08);
+
+    --shadow-lg:
+        0 20px 40px rgba(0, 0, 0, 0.12);
+
+    --transition: all 0.3s ease;
+
+    --font-family: "Tajawal", sans-serif;
+}
+
+
+/* =========================
+   الإعدادات العامة
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    direction: rtl;
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+/* =========================
+   الهيدر
+========================= */
+
+.head {
+    width: 100%;
+    height: 80px;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+.navbar {
+    width: 90%;
+    max-width: 1400px;
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* الشعار */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+.logo img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+
+    display: block;
+    transition: all ease 0.3s;
+}
+.logo img:hover {
+
+transform: scale(1.1);
+}
+
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+.title h3 {
+    color: var(--primary-color);
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    line-height: 1.4;
+}
+
+
+.title p {
+    color: var(--secondary-color);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* القائمة */
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    gap: 5px;
+}
+
+
+.main-menu>li {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.main-menu>li>.links {
+    position: relative;
+
+    padding: 27px 10px;
+
+    color: var(--primary-color);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: var(--transition);
+}
+
+
+.main-menu>li>.links::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    right: 50%;
+    bottom: 17px;
+
+    transform: translateX(50%);
+
+    background: var(--accent-color);
+
+    border-radius: 5px;
+
+    transition: var(--transition);
+}
+
+
+.main-menu>li:hover>.links {
+    color: var(--secondary-color);
+}
+
+
+.main-menu>li:hover>.links::after {
+    width: 65%;
+}
+
+
+.main-menu .bi-chevron-down {
+    color: var(--secondary-color);
+
+    font-size: 10px;
+
+    margin-right: -3px;
+}
+
+
+/* القوائم الفرعية */
+
+.dropdown {
+    position: relative;
+}
+
+
+.submenu {
+    display: none;
+
+    position: absolute;
+
+    top: 72px;
+    right: 0;
+
+    min-width: 220px;
+
+    padding: 10px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow-lg);
+
+    z-index: 3000;
+}
+
+
+.dropdown:hover>.submenu {
+    display: flex;
+}
+
+
+/* القائمة الفردية */
+
+.single-menu {
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.single-menu li {
+    width: 100%;
+}
+
+
+.submenu a {
+    display: block;
+
+    padding: 10px 14px;
+
+    color: var(--text-color);
+
+    font-size: 13px;
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    transition: var(--transition);
+}
+
+
+.submenu a:hover {
+    background: rgba(19, 123, 163, 0.08);
+
+    color: var(--secondary-color);
+}
+
+
+/* قائمة الكليات */
+
+.college-menu {
+    width: 360px;
+
+    display: none;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.dropdown:hover>.college-menu {
+    display: grid;
+}
+
+
+.college-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+/* اللغة */
+
+.language-container {
+    flex-shrink: 0;
+}
+
+
+.language {
+    width: 85px;
+    height: 38px;
+
+    border: none;
+    border-radius: 25px;
+
+    background:
+        linear-gradient(135deg,
+            var(--secondary-color),
+            var(--primary-color));
+
+    color: var(--white);
+
+    font-family: var(--font-family);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+
+.language:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================
+   القسم الرئيسي
+========================= */
+
+.hero {
+    min-height: 600px;
+    height: 78vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        url("/src/assets/images/logo.png") center / cover no-repeat;
+
+    text-align: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(11, 60, 93, 0.88),
+            rgba(19, 123, 163, 0.65));
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.hero-welcome {
+    color: var(--white);
+
+    font-size: 28px;
+}
+
+
+.hero-content h1 {
+    color: var(--accent-color);
+
+    font-size: 65px;
+
+    line-height: 1.4;
+
+    font-weight: 900;
+}
+
+
+.hero-content p {
+    color: var(--white);
+
+    font-size: 20px;
+
+    margin-top: 10px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.primary-button,
+.secondary-button {
+    min-width: 145px;
+
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+.primary-button {
+    background: var(--accent-color);
+
+    color: var(--primary-color);
+}
+
+
+.secondary-button {
+    color: var(--white);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+
+.primary-button:hover,
+.secondary-button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   الخدمات السريعة
+========================= */
+
+.quick-links-section {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: -45px auto 0;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+.quick-links {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background: var(--white);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow-lg);
+
+    overflow: hidden;
+}
+
+
+.quick-link {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 25px 20px;
+
+    border-left:
+        1px solid var(--border-color);
+
+    transition: var(--transition);
+}
+
+
+.quick-link:last-child {
+    border-left: none;
+}
+
+
+.quick-link:hover {
+    background: var(--bg-color);
+}
+
+
+.quick-link i {
+    font-size: 30px;
+
+    color: var(--secondary-color);
+}
+
+
+.quick-link h4 {
+    color: var(--primary-color);
+
+    font-size: 15px;
+}
+
+
+.quick-link span {
+    color: var(--text-light);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   الإعدادات العامة للأقسام
+========================= */
+
+.about-section,
+.leadership-section,
+.registrar-section,
+.colleges-section,
+.news-section,
+.contact-section {
+    padding: 100px 5%;
+}
+
+
+.section-header {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.section-header>span,
+.section-label {
+    display: inline-block;
+
+    color: var(--secondary-color);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.section-header h2 {
+    color: var(--primary-color);
+
+    font-size: 38px;
+}
+
+
+/* =========================
+   عن الجامعة
+========================= */
+
+.about-section {
+    background: var(--white);
+}
+
+
+.about-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.about-visual {
+    position: relative;
+}
+
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+.college-count-card {
+    position: absolute;
+
+    left: -30px;
+    bottom: -30px;
+
+    width: 160px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    background: var(--primary-color);
+
+    border-radius: 14px;
+
+    border: 4px solid var(--white);
+
+    box-shadow: var(--shadow-md);
+    animation: lb ease 5.0s infinite;
+}
+
+@keyframes lb{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+    100%{
+transform: translateY(0);
+    }
+}
+.count-number {
+    color: var(--accent-color);
+
+    font-size: 34px;
+
+    font-weight: 900;
+}
+
+
+.count-category {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--white);
+
+    font-size: 12px;
+}
+
+
+.about-content h2 {
+    color: var(--primary-color);
+
+    font-size: 42px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+
+.about-content>p {
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+.about-features {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.feature-item {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+
+.feature-item:hover {
+    background: var(--bg-color);
+}
+
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(19, 123, 163, 0.1);
+
+    color: var(--secondary-color);
+
+    font-size: 22px;
+}
+
+
+.feature-item h3 {
+    color: var(--primary-color);
+
+    font-size: 16px;
+}
+
+
+.feature-item p {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   الإحصائيات
+========================= */
+
+.statistics-section {
+    padding: 100px 5%;
+
+    background:
+        linear-gradient(135deg,
+            var(--primary-color),
+            #072c45);
+}
+
+
+.light-header h2,
+.light-header span {
+    color: var(--white);
+}
+
+
+.statistics-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.stat-card {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+
+.stat-card i {
+    display: block;
+
+    color: var(--accent-color);
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+
+.stat-card strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 34px;
+
+    font-weight: 900;
+}
+
+
+.stat-card span {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   رئيس الجامعة
+========================= */
+
+.leadership-section {
+    background: var(--white);
+}
+
+
+.leadership-container {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 380px 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.leader-image img {
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+.leader-content h2 {
+    color: var(--primary-color);
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.leader-content h3 {
+    color: var(--secondary-color);
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+
+.leader-content p {
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+.read-more {
+    color: var(--secondary-color);
+
+    font-weight: 700;
+}
+
+
+.read-more i {
+    margin-right: 8px;
+}
+
+
+/* =========================
+   المسجل العام
+========================= */
+
+.registrar-section {
+    background: var(--bg-color);
+}
+
+
+.registrar-container {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 350px;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+.registrar-content h2 {
+    color: var(--primary-color);
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+
+.registrar-content>p {
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+.registrar-services {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+.registrar-services div {
+    background: var(--white);
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    color: var(--text-color);
+
+    font-size: 14px;
+}
+
+
+.registrar-services i {
+    color: var(--secondary-color);
+
+    margin-left: 7px;
+}
+
+
+.registrar-image {
+    height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(135deg,
+            var(--secondary-color),
+            var(--primary-color));
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+.registrar-image i {
+    color: var(--white);
+
+    font-size: 130px;
+}
+
+
+.primary-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    background: var(--accent-color);
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+.primary-link:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   الكليات
+========================= */
+
+.colleges-section {
+    background: var(--white);
+}
+
+
+.colleges-grid {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.college-card {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 15px;
+
+    transition: var(--transition);
+}
+
+
+.college-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-md);
+
+    border-color:
+        var(--secondary-color);
+}
+
+
+.college-card i {
+    display: block;
+
+    font-size: 35px;
+
+    color: var(--secondary-color);
+
+    margin-bottom: 15px;
+}
+
+
+.college-card h3 {
+    color: var(--primary-color);
+
+    font-size: 17px;
+}
+
+
+.college-card p {
+    color: var(--text-light);
+
+    font-size: 12px;
+}
+
+
+.center-button {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+
+/* =========================
+   الأخبار
+========================= */
+
+.news-section {
+    background: var(--bg-color);
+}
+
+
+.news-grid {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.news-card {
+    background: var(--white);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+
+.news-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.news-image {
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg,
+            var(--secondary-color),
+            var(--primary-color));
+}
+
+
+.news-image i {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 70px;
+}
+
+
+.news-content {
+    padding: 20px;
+}
+
+
+.news-content>span {
+    color: var(--secondary-color);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.news-content h3 {
+    color: var(--primary-color);
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    margin: 8px 0;
+}
+
+
+.news-content p {
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+
+.news-content a {
+    color: var(--secondary-color);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   التواصل
+========================= */
+
+.contact-section {
+    background: var(--white);
+}
+
+
+.contact-container {
+    width: 90%;
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+
+.contact-content>span {
+    color: var(--secondary-color);
+
+    font-weight: 700;
+}
+
+
+.contact-content h2 {
+    color: var(--primary-color);
+
+    font-size: 40px;
+
+    margin: 10px 0;
+}
+
+
+.contact-content>p {
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-item i {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(19, 123, 163, 0.1);
+
+    color: var(--secondary-color);
+
+    border-radius: 50%;
+}
+
+
+.contact-item strong {
+    color: var(--primary-color);
+
+    display: block;
+}
+
+
+.contact-item p {
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 30px;
+
+    background: var(--bg-color);
+
+    border-radius: 18px;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: var(--font-family);
+}
+
+
+.contact-form textarea {
+    height: 130px;
+
+    resize: vertical;
+}
+
+
+.contact-form button {
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--primary-color);
+
+    color: var(--white);
+
+    font-family: var(--font-family);
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   الفوتر
+========================= */
+
+footer {
+    background: #062c45;
+
+    color: var(--white);
+}
+
+
+.footer-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 60px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap: 60px;
+}
+
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-brand img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+}
+
+
+.footer-brand h3 {
+    font-size: 19px;
+}
+
+
+.footer-brand span {
+    color:
+        rgba(255, 255, 255, 0.6);
+
+    font-size: 10px;
+}
+
+
+.footer-about>p {
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    max-width: 350px;
+
+    font-size: 13px;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.footer-links h3 {
+    color: var(--accent-color);
+
+    margin-bottom: 8px;
+}
+
+
+.footer-links a {
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 13px;
+
+    transition: var(--transition);
+}
+
+
+.footer-links a:hover {
+    color: var(--accent-color);
+
+    padding-right: 5px;
+}
+
+
+.footer-bottom {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.footer-bottom p {
+    color:
+        rgba(255, 255, 255, 0.6);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   الأجهزة المتوسطة
+========================= */
+
+@media (max-width: 1100px) {
+
+    .main-menu {
+        gap: 0;
+    }
+
+    .main-menu>li>.links {
+        font-size: 12px;
+
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+
+    .statistics-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .colleges-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================
+   الهاتف
+========================= */
+
+@media (max-width: 768px) {
+
+    .head {
+        height: auto;
+    }
+
+
+    .navbar {
+        flex-wrap: wrap;
+
+        padding: 12px 0;
+
+        justify-content: center;
+    }
+
+
+    .brand {
+        order: 1;
+    }
+
+
+    .language-container {
+        order: 2;
+    }
+
+
+    .main-menu {
+        order: 3;
+
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .main-menu>li>.links {
+        padding: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .submenu {
+        right: 50%;
+
+        transform: translateX(50%);
+
+        top: 40px;
+    }
+
+
+    .college-menu {
+        width: 300px;
+    }
+
+
+    .hero {
+        min-height: 500px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+
+    .hero-welcome {
+        font-size: 22px;
+    }
+
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    .quick-links {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .quick-link {
+        border:
+            1px solid var(--border-color);
+    }
+
+
+    .about-container,
+    .leadership-container,
+    .registrar-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-container {
+        gap: 50px;
+    }
+
+
+    .about-image img {
+        height: 300px;
+    }
+
+
+    .about-content h2,
+    .leader-content h2,
+    .registrar-content h2,
+    .contact-content h2 {
+        font-size: 30px;
+    }
+
+
+    .section-header h2 {
+        font-size: 30px;
+    }
+
+
+    .statistics-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .leadership-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .leader-image {
+        max-width: 350px;
+
+        margin: auto;
+    }
+
+
+    .registrar-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .colleges-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .about-section,
+    .leadership-section,
+    .registrar-section,
+    .colleges-section,
+    .news-section,
+    .contact-section {
+        padding: 70px 5%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+
+
+    .statistics-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .colleges-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .registrar-services {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+
+    .college-count-card {
+        left: 10px;
+        bottom: -20px;
+    }
+
+}
+
+.bi {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    display: inline-block;
+    line-height: 1;
+}
