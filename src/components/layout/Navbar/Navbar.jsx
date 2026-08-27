@@ -1,7 +1,8 @@
 import "./index.css";
 import { Link } from "react-router-dom";
+import { useState } from 'react'
 import uniLogo from "../../../assets/images/un1020.png";
-function Navbar() {
+function Navbar({dark , setDark}) {
     return (
         <header className="head">
             <nav className="navbar">
@@ -146,7 +147,7 @@ function Navbar() {
                 </ul>
 
                 <div className="language-container">
-                    <button className="language">English</button>
+                    <button className="language" onClick={()=>setDark(!dark)}>English</button>
                 </div>
             </nav>
         </header>
