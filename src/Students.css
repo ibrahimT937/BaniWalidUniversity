@@ -1,0 +1,9 @@
+.table{
+    margin: 150px auto;
+    background: linear-gradient(180deg,#0f0b33,#0f0161);
+    color: white;
+    width: 60%;
+    border-radius: 20px;
+}
+
+

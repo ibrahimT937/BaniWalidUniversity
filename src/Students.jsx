@@ -1,20 +1,32 @@
-import "./Students.css"
+import "./Students.css";
 
 function students() {
-    const student ={
-        name: "ابراهيم",
-        age:26,
-        gender:"male",
-        degree:90,
-    }
+  const student = {
+    name: "ابراهيم",
+    age: 26,
+    gender: "male",
+    degree: 90,
+  };
   return (
-    <div>
-        <p>{student.name}</p>
-        <p>{student.age}</p>
-        <p>{student.gender}</p>
-        <p>{student.degree}</p>
-    </div>
-  )
-};
+    <table className="table">
+      <thead>
+        <tr>
+          <th>الاسم</th>
+          <th>العمر</th>
+          <th>الجنس</th>
+          <th>الدرجة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{student.name}</td>
+          <td>{student.age}</td>
+          <td>{student.gender}</td>
+          <td>{student.degree}</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
 
-export default students
+export default students;
