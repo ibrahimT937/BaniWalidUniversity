@@ -19,7 +19,6 @@ function students() {
       </thead>
       <tbody>
         <tr>
-          <td>{student.name}</td>
           <td>{student.age}</td>
           <td>{student.gender}</td>
           <td>{student.degree}</td>
