@@ -1,8 +1,8 @@
 import "./App.css"
-import Students from "./students"
+import Patiens from "../Patients"
 function App() {
     return (
-       <Students />
+    <Patiens />
     )
 }
 
