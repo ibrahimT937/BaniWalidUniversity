@@ -1,5 +1,5 @@
 
-import "./about-university.css";
+import "./AboutUniversityPage.css";
 
 function AboutUniversity() {
     return (

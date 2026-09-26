@@ -1,4 +1,4 @@
-import "./it.css";
+import "./InformationTechnologyCollegePage.css";
 import { Link } from "react-router-dom";
 
 function ITCollege() {

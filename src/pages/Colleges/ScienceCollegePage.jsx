@@ -1,5 +1,5 @@
 
-import "./science.css";
+import "./ScienceCollegePage.css";
 import { Link } from "react-router-dom";
 
 function ScienceCollege() {

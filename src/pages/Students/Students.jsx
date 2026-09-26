@@ -1,2 +1,0 @@
-import PageHero from '../components/common/PageHero';
-export default function Students(){const items=['التسجيل الأكاديمي','النتائج والسجل الأكاديمي','الجداول الدراسية','الامتحانات','الخدمات الإلكترونية','الدعم الطلابي'];return <><PageHero title="بوابة الطلاب" subtitle="خدمات أكاديمية وإلكترونية منظمة للطلاب."/><section className="container section"><div className="feature-grid">{items.map(x=><article className="feature" key={x}><h3>{x}</h3><p>قسم جاهز للتطوير والربط مع النظام الأكاديمي.</p></article>)}</div></section></>;}

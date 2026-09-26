@@ -31,7 +31,7 @@ function Navbar() {
 
                         <ul className="submenu single-menu">
                             <li>
-                                <Link to="/AboutUniversity">نبذة عن الجامعة</Link>
+                                <Link to="/about-university">نبذة عن الجامعة</Link>
                             </li>
                             <li>
                                 <Link to="/#president">رئيس الجامعة</Link>

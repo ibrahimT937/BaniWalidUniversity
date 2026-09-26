@@ -1,11 +1,9 @@
-import "./components/layout/Navbar/index.css";
 import { Link } from "react-router-dom";
 
-import Logo from "./assets/images/hero.png";
-import uoLogo from "./assets/images/uo.png";
-import presidentImg from "./assets/images/spaga.png";
+import uoLogo from "../../assets/images/uo.png";
+import presidentImg from "../../assets/images/spaga.png";
 
-function Section() {
+function HomePage() {
     return (
         <main>
             {/* Hero Section */}
@@ -376,4 +374,4 @@ function Section() {
     );
 }
 
-export default Section;
+export default HomePage;

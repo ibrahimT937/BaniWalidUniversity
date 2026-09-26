@@ -1,5 +1,5 @@
 
-import "./arts.css";
+import "./ArtsCollegePage.css";
 
 function ArtsCollege() {
     return (

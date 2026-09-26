@@ -1,4 +1,4 @@
-import "./engineering.css";
+import "./EngineeringCollegePage.css";
 
 function EngineeringCollege() {
     return (

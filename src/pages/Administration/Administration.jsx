@@ -1,3 +1,0 @@
-import PageHero from '../components/common/PageHero';
-const leaders=['رئيس الجامعة','وكيل الشؤون العلمية','وكيل الشؤون الإدارية','المسجل العام','مدير إدارة البحث العلمي','مدير مركز تقنية المعلومات'];
-export default function Administration(){return <><PageHero title="الإدارة الجامعية" subtitle="الهيكل الإداري والقيادات الجامعية."/><section className="container section"><div className="feature-grid">{leaders.map(x=><article className="feature" key={x}><div className="avatar">👤</div><h3>{x}</h3><p>المعلومات والمهام والتواصل.</p></article>)}</div></section></>;}
